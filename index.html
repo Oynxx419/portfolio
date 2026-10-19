@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>oynxx | Minecraft Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080c;--panel:#0f1118;--panel2:#151823;--line:#232736;--text:#f1f3f8;--muted:#98a0b6;
+  --emerald:#34d399;--red:#f0556a;--purple:#8b6cf0;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f4f8;--panel:#fff;--panel2:#f7f8fc;--line:#dcdfea;--text:#12141c;--muted:#565c72;--emerald:#0b8f60;--red:#cf2a3d;--purple:#6a45dc}}
+:root[data-theme="dark"]{--bg:#07080c;--panel:#0f1118;--panel2:#151823;--line:#232736;--text:#f1f3f8;--muted:#98a0b6;--emerald:#34d399;--red:#f0556a;--purple:#8b6cf0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.7 "DM Sans",system-ui,sans-serif;
+  background-image:radial-gradient(900px 420px at 85% -5%,color-mix(in srgb,var(--purple) 22%,transparent),transparent),radial-gradient(700px 380px at 5% 10%,color-mix(in srgb,var(--emerald) 14%,transparent),transparent);background-repeat:no-repeat}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--emerald);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font:700 19px "Sora",sans-serif;text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
+nav ul a:hover{color:var(--text)}
+.hero{padding:92px 0 80px;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--panel);border-radius:99px;padding:6px 16px;font-weight:500;font-size:14px;margin-bottom:24px}
+.badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 10px var(--emerald)}
+h1{font:700 clamp(44px,8vw,86px)/1 "Sora",sans-serif;margin:0 0 22px;letter-spacing:-.03em}
+h2{font:700 clamp(28px,4vw,40px)/1.1 "Sora",sans-serif;margin:0 0 10px;letter-spacing:-.02em}
+.lead{color:var(--muted);max-width:46ch;margin:0 0 32px;font-size:19px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 26px;font-weight:700;text-decoration:none;border-radius:12px;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.btn.fill{background:linear-gradient(180deg,color-mix(in srgb,var(--emerald) 100%,#fff 12%),var(--emerald));color:#04110b;border-color:transparent;box-shadow:0 10px 24px -8px color-mix(in srgb,var(--emerald) 60%,transparent)}
+.btn.ghost{background:var(--panel)}
+.btn:hover{transform:translateY(-2px)}
+.card{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:34px 26px;text-align:center;box-shadow:0 30px 60px -25px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06)}
+.avatar{width:128px;height:128px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;font:700 52px "Sora",sans-serif;color:#fff;
+  background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--purple) 80%,#fff 20%),var(--purple) 55%,color-mix(in srgb,var(--purple) 55%,#000));
+  box-shadow:0 0 0 5px var(--panel),0 0 0 7px var(--emerald),0 18px 40px -10px color-mix(in srgb,var(--purple) 70%,transparent)}
+.card b{display:block;font:700 22px "Sora",sans-serif}
+.card span{color:var(--muted);font-size:15px}
+section{padding:76px 0;border-top:1px solid var(--line)}
+.sub{color:var(--muted);margin:0 0 34px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 20px 40px -24px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);position:relative}
+.box::before{content:"";position:absolute;left:28px;top:0;width:44px;height:3px;border-radius:0 0 3px 3px;background:var(--emerald)}
+.box.r::before{background:var(--red)}
+.box.p::before{background:var(--purple)}
+.box h3{margin:6px 0 6px;font:700 20px "Sora",sans-serif}
+.box p{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:15px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:50px;gap:40px}.two{grid-template-columns:1fr}nav ul{gap:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#home">oynxx</a>
+<ul><li><a href="#about">About</a></li><li><a href="#roles">Positions</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+<main id="home" class="wrap">
+  <div class="hero">
+    <div>
+      <span class="badge">Sr. Manager</span>
+      <h1>oynxx</h1>
+      <p class="lead">I help run Minecraft communities with fair rules, an active staff team, and players who want to stay.</p>
+      <div class="btns">
+        <a class="btn fill" href="#roles">See my positions</a>
+        <a class="btn ghost" href="#contact">Join my Discord</a>
+      </div>
+    </div>
+    <div class="card"><img class="avatar" style="object-fit:cover;display:block" alt="oynxx profile picture" src="data:image/jpeg;base64,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"><b>@oynxx</b><span>Sr. Manager at IceSMP</span></div>
+  </div>
+</main>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <p class="sub">Who I am in Minecraft.</p>
+  <p style="max-width:60ch;margin:0 0 28px">Hi, I'm <strong>oynxx</strong>, Sr. Manager at IceSMP and Manager at Zyro MC. I focus on giving players a smooth, friendly server and growing the community through good events and honest leadership.</p>
+  <div class="two">
+    <div class="box"><h3>Community leadership</h3><p>Managing staff, rules, and day-to-day server life.</p></div>
+    <div class="box p"><h3>Player support</h3><p>Answering tickets and solving problems fast.</p></div>
+  </div>
+</div></section>
+
+<section id="roles"><div class="wrap">
+  <h2>Positions</h2>
+  <p class="sub">My current role and main project.</p>
+  <div class="two">
+    <div class="box"><h3>Sr. Manager</h3><p>IceSMP. Leading the team and helping run the server.</p></div>
+    <div class="box r"><h3>Manager</h3><p>Zyro MC. Helping manage staff and the community.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Join the community</h2>
+  <p class="sub">Find the server or message me on Discord.</p>
+  <div class="btns">
+    <a class="btn fill" href="https://discord.gg/GYDuuSh8X">Server Discord</a>
+    <a class="btn ghost" href="https://discord.com/users/1491734452894699531">My Discord</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">&copy; oynxx. Minecraft portfolio.</div></footer>
+</body>
+</html>
